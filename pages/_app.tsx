@@ -7,6 +7,11 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+
+  body {
+    //TODO: add font family
+    // part 3 (6:37)
+  }
 `
 
 
