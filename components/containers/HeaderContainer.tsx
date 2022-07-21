@@ -4,13 +4,11 @@ import { gradientGenerator } from '../../constants'
 import bg from '../../public/bg.jpg';
 
 
-
-
 export const HeaderContainer:React.FC = () => {
-  // console.log(gradientGenerator({first:"right", opacity:.5}));
-  
   return (
-    <Wrapper>HeaderContainer</Wrapper>
+    <Wrapper>
+      <PrimaryHeader>Mina Yagoubi kia</PrimaryHeader>
+    </Wrapper>
   )
 }
 
@@ -19,6 +17,9 @@ const Wrapper = styled.div`
     background-position: center;
     background-size: cover;
     height: 50vh;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    position: relative;
+
     
     @media screen and (min-width: 600px) {
         height: 65vh;
@@ -27,4 +28,14 @@ const Wrapper = styled.div`
     @media screen and (min-width: 1024px) {
         height: 95vh;
     }
+`;
+
+const PrimaryHeader = styled.h1`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 60px;
 `;
