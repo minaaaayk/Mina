@@ -5,6 +5,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  }
 }
 
 module.exports = nextConfig
