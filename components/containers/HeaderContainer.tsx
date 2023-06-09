@@ -2,18 +2,18 @@ import React from 'react'
 import styled from 'styled-components';
 import { gradientGenerator } from '../../constants'
 import bg from '../../public/bg.jpg';
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { ChangeLocal } from '../other/ChangeLocal';
 
 
 export const HeaderContainer:React.FC = () => {
-  const { locale } = useRouter();
   const { t } = useTranslation("header");
 
   return (
     <Wrapper>
       {/* <PrimaryHeader>Mina Yagoubi kia</PrimaryHeader> */}
-      <PrimaryHeader> {t("name")} {locale}</PrimaryHeader>
+      <ChangeLocal/>
+      <PrimaryHeader> {t("name")}</PrimaryHeader>
     </Wrapper>
   )
 }
