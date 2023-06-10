@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { gradientGenerator } from '../../functions'
 import bg from '../../../public/bg.jpg';
 import { useTranslation } from "next-i18next";
-import { ChangeLocal } from '../other/ChangeLocal';
+import { ChangeLocal } from '../custom/ChangeLocal';
 
 
-export const HeaderContainer:React.FC = () => {
+export const Header:React.FC = () => {
   const { t } = useTranslation("header");
 
   return (

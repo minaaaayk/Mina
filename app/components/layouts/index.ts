@@ -1,1 +1,2 @@
-export * from '.';
+export * from './Footer';
+export * from './Header';
