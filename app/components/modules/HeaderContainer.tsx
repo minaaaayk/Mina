@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { gradientGenerator } from '../../constants'
+import { gradientGenerator } from '../../functions'
 import bg from '../../../public/bg.jpg';
 import { useTranslation } from "next-i18next";
 import { ChangeLocal } from '../other/ChangeLocal';
