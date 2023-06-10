@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head'
-import { HeaderContainer } from '../components';
+import { HeaderContainer } from '../app/components';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
