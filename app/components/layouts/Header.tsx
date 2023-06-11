@@ -13,7 +13,7 @@ export const Header:React.FC = () => {
     <Wrapper>
       <ChangeLocal/>
       <MainHeader>
-        <PrimaryTitle> {t("name")}</PrimaryTitle>
+        <PrimaryTitle> {t("primaryTitle")}</PrimaryTitle>
       </MainHeader>
     </Wrapper>
   )
