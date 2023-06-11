@@ -14,6 +14,7 @@ export const Header:React.FC = () => {
       <ChangeLocal/>
       <MainHeader>
         <PrimaryTitle> {t("primaryTitle")}</PrimaryTitle>
+        <SubTitle>{t("subTitle")}</SubTitle>
       </MainHeader>
     </Wrapper>
   )
@@ -42,18 +43,48 @@ const MainHeader = styled.div`
   top: 50%;
   left: 50%;
   text-transform: uppercase;
+  color: white;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const PrimaryTitle = styled.h1`
-  color: white;
   font-size: 60px;
+  font-weight: 600;
   animation-name: fromLeft;
-  animation-duration: 5s;
+  animation-duration: 1s;
   @keyframes fromLeft {
     0%{
       opacity: 0;
       transform: translateX(-100px);
+    }
+
+    60%{
+      transform: translateX(30px);
+    }
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+`;
+
+const SubTitle = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 16px;
+  animation-name: fromRight;
+  animation-duration: 1s;
+  @keyframes fromRight {
+    0%{
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    60%{
+      transform: translateX(-30px);
     }
     100%{
       opacity: 1;
