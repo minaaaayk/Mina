@@ -15,6 +15,7 @@ export const Header:React.FC = () => {
       <MainHeader>
         <PrimaryTitle> {t("primaryTitle")}</PrimaryTitle>
         <SubTitle>{t("subTitle")}</SubTitle>
+        <WhiteButton href="">{t("mainButton")}</WhiteButton>
       </MainHeader>
     </Wrapper>
   )
@@ -48,11 +49,13 @@ const MainHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  backface-visibility: hidden;
 `;
 
 const PrimaryTitle = styled.h1`
   font-size: 60px;
   font-weight: 600;
+  letter-spacing: 10px;
   animation-name: fromLeft;
   animation-duration: 1s;
   @keyframes fromLeft {
@@ -91,4 +94,46 @@ const SubTitle = styled.h3`
       transform: translate(0);
     }
   }
+`;
+
+const WhiteButton = styled.a`
+
+  text-decoration: none;
+  &:link, &:visited {
+
+  }
+  background-color: white;
+  color: #242424;
+  padding: 1rem 2rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 4rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    border-radius: 4rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: white;
+    color: #242424;
+    transition: all .3s;
+    transition-timing-function: linear;
+  }
+
+  &:hover{
+    &::after{
+      opacity: .3;
+      left: -20px;
+      right: -20px;
+      top: -10px;
+      bottom: -10px;
+    }
+  }
+
 `;
