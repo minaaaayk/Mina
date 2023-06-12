@@ -15,7 +15,7 @@ export const Header:React.FC = () => {
       <MainHeader>
         <PrimaryTitle> {t("primaryTitle")}</PrimaryTitle>
         <SubTitle>{t("subTitle")}</SubTitle>
-        <WhiteButton href="">{t("mainButton")}</WhiteButton>
+        <WhiteButton href="#">{t("mainButton")}</WhiteButton>
       </MainHeader>
     </Wrapper>
   )
@@ -99,9 +99,6 @@ const SubTitle = styled.h3`
 const WhiteButton = styled.a`
 
   text-decoration: none;
-  &:link, &:visited {
-
-  }
   background-color: white;
   color: #242424;
   padding: 1rem 2rem;
@@ -110,29 +107,51 @@ const WhiteButton = styled.a`
   border-radius: 4rem;
   margin-top: 1rem;
   cursor: pointer;
+  transition: all .3s;
   position: relative;
+
+  animation: fromBottom .5s ease-in-out 1s;
+  animation-fill-mode: backwards;
+
   &::after{
     content: "";
-    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: white;
     border-radius: 4rem;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    opacity: 0;
-    background-color: white;
-    color: #242424;
-    transition: all .3s;
-    transition-timing-function: linear;
+    z-index: -1;  
+    transition : all .5s;
+    opacity: 1;
   }
 
   &:hover{
+    transform: translateY(-4px);
+    box-shadow: -1px 10px 20px rgba(0, 0, 0, .2);
     &::after{
-      opacity: .3;
-      left: -20px;
-      right: -20px;
-      top: -10px;
-      bottom: -10px;
+      transform: scaleX(1.3) scaleY(1.2);
+      opacity: 0;
+    }
+    
+  }
+  &:active{
+    transform: translateY(0px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  }
+
+  @keyframes fromBottom {
+    0%{
+      opacity: 0;
+      transform: translateY(100px);
+      padding: 1rem 2rem;
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 
