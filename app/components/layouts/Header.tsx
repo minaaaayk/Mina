@@ -112,6 +112,10 @@ const WhiteButton = styled.a`
 
   animation: fromBottom .5s ease-in-out 1s;
   animation-fill-mode: backwards;
+  /*  backwards: start with first start (use for delay) */
+  /*  forwards:  stay in last state */
+  /*  both: use forward and backward together */
+
 
   &::after{
     content: "";
