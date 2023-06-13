@@ -4,17 +4,19 @@ import { gradientGenerator } from '../../functions'
 import bg from '../../../public/bg.jpg';
 import { useTranslation } from "next-i18next";
 import { ChangeLocal } from '../custom/ChangeLocal';
+import { useIsRtl } from '../../hooks/useIsRtl';
 
 
 export const Header:React.FC = () => {
   const { t } = useTranslation("header");
-
+  const isRtl = useIsRtl();
+  
   return (
     <Wrapper>
       <ChangeLocal/>
       <MainHeader>
-        <PrimaryTitle> {t("primaryTitle")}</PrimaryTitle>
-        <SubTitle>{t("subTitle")}</SubTitle>
+        <PrimaryTitle isRtl={isRtl}> {t("primaryTitle")}</PrimaryTitle>
+        <SubTitle isRtl={isRtl}>{t("subTitle")}</SubTitle>
         <WhiteButton href="#">{t("mainButton")}</WhiteButton>
       </MainHeader>
     </Wrapper>
@@ -52,20 +54,21 @@ const MainHeader = styled.div`
   backface-visibility: hidden;
 `;
 
-const PrimaryTitle = styled.h1`
-  font-size: 60px;
+const PrimaryTitle = styled.h1<{isRtl: boolean}>`
+  font-size: 6rem;
   font-weight: 600;
-  letter-spacing: 10px;
+  letter-spacing: ${props => props.isRtl ? '0' : '1rem'};
+  word-spacing: ${props => props.isRtl ? '1rem' : '0'};
   animation-name: fromLeft;
   animation-duration: 1s;
   @keyframes fromLeft {
     0%{
       opacity: 0;
-      transform: translateX(-100px);
+      transform: translateX(-10rem);
     }
 
     60%{
-      transform: translateX(30px);
+      transform: translateX(3rem);
     }
     100%{
       opacity: 1;
@@ -74,20 +77,21 @@ const PrimaryTitle = styled.h1`
   }
 `;
 
-const SubTitle = styled.h3`
-  font-size: 20px;
+const SubTitle = styled.h3<{isRtl: boolean}>`
+  font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 16px;
+  letter-spacing: ${props => props.isRtl ? '0' : '1.6rem'};
+  word-spacing: ${props => props.isRtl ? '1.6rem' : '0'};
   animation-name: fromRight;
   animation-duration: 1s;
   @keyframes fromRight {
     0%{
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(10rem);
     }
 
     60%{
-      transform: translateX(-30px);
+      transform: translateX(-3rem);
     }
     100%{
       opacity: 1;
@@ -102,7 +106,7 @@ const WhiteButton = styled.a`
   background-color: white;
   color: #242424;
   padding: 1rem 2rem;
-  font-size: 18px;
+  font-size: 1.8rem;
   border: none;
   border-radius: 4rem;
   margin-top: 1rem;
@@ -134,8 +138,8 @@ const WhiteButton = styled.a`
   }
 
   &:hover{
-    transform: translateY(-4px);
-    box-shadow: -1px 10px 20px rgba(0, 0, 0, .2);
+    transform: translateY(-.4rem);
+    box-shadow: -.1rem 1rem 2rem rgba(0, 0, 0, .2);
     &::after{
       transform: scaleX(1.3) scaleY(1.2);
       opacity: 0;
@@ -143,19 +147,19 @@ const WhiteButton = styled.a`
     
   }
   &:active{
-    transform: translateY(0px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    transform: translateY(0);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
   }
 
   @keyframes fromBottom {
     0%{
       opacity: 0;
-      transform: translateY(100px);
+      transform: translateY(10rem);
       padding: 1rem 2rem;
     }
     100%{
       opacity: 1;
-      transform: translateY(0px);
+      transform: translateY(0);
     }
   }
 
