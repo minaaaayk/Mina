@@ -9,10 +9,21 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html{
+    font-size: 10px;
+    direction: ltr;
+  }
+  html[lang^='fa'],
+  html[lang^='ar'],
+  html[lang^='he'] {
+    direction: rtl;
+  }
+
   body {
     /* font-family: 'M PLUS Rounded 1c', sans-serif; */
     /* font-family: 'Vazirmatn', sans-serif; */
     font-family: 'Baloo Bhaijaan 2', cursive;
+    color: #777;
     //TODO: add font family
     // part 3 (6:37)
   }
