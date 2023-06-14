@@ -13,9 +13,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
     direction: ltr;
   }
-  html[lang^='fa'],
-  html[lang^='ar'],
-  html[lang^='he'] {
+  html[lang^='fa'] {
     direction: rtl;
   }
 
