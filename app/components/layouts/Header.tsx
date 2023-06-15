@@ -5,6 +5,7 @@ import bg from '../../../public/bg.jpg';
 import { useTranslation } from "next-i18next";
 import { ChangeLocal } from '../custom/ChangeLocal';
 import { useIsRtl } from '../../hooks/useIsRtl';
+import { Color } from '../../constants';
 
 
 export const Header:React.FC = () => {
@@ -104,7 +105,7 @@ const WhiteButton = styled.a`
 
   text-decoration: none;
   background-color: white;
-  color: #242424;
+  color: ${Color.mainText};
   padding: 1rem 2rem;
   font-size: 1.8rem;
   border: none;

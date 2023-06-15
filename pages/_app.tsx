@@ -1,6 +1,7 @@
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from 'next/app'
 import { createGlobalStyle } from 'styled-components';
+import { Color } from "../app/constants";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -21,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
     /* font-family: 'M PLUS Rounded 1c', sans-serif; */
     /* font-family: 'Vazirmatn', sans-serif; */
     font-family: 'Baloo Bhaijaan 2', cursive;
-    color: #777;
+    color: ${Color.mainText};
     //TODO: add font family
     // part 3 (6:37)
   }

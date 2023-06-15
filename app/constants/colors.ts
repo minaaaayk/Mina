@@ -21,5 +21,6 @@ export enum Color {
     mainGreen = "#5FFBF1", 
     mainPurple = "#86A8E7",
     mainPink = "#D16BA5",
-    gradient= ""
+
+    mainText = "#777",
 };
