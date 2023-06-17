@@ -11,7 +11,6 @@ import { Color } from '../../constants';
 export const Header:React.FC = () => {
   const { t } = useTranslation("header");
   const isRtl = useIsRtl();
-  // these from mobile
   
   return (
     <Wrapper>
