@@ -1,4 +1,7 @@
 export enum Breakpoint {
+    xxs = '290px',
+    // => @media (min-width: 576px) { ... }
+
     xs = '576px',
     // => @media (min-width: 576px) { ... }
 
