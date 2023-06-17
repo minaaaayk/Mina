@@ -13,10 +13,7 @@ const GlobalStyles = createGlobalStyle`
   html{
     direction: ltr;
     
-    font-size: 5px;
-    @media (min-width: ${Breakpoint.xs}) {
-      font-size: 6px;
-    }
+    font-size: 6px;
     @media (min-width: ${Breakpoint.sm}) {
       font-size: 7px;
     }
