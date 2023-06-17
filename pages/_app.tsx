@@ -1,7 +1,7 @@
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from 'next/app'
 import { createGlobalStyle } from 'styled-components';
-import { Color } from "../app/constants";
+import { Breakpoint, Color } from "../app/constants";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -11,8 +11,25 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html{
-    font-size: 10px;
     direction: ltr;
+    
+    font-size: 5px;
+    @media (min-width: ${Breakpoint.xs}) {
+      font-size: 6px;
+    }
+    @media (min-width: ${Breakpoint.sm}) {
+      font-size: 7px;
+    }
+    @media (min-width: ${Breakpoint.lg}) {
+      font-size: 8px;
+    }
+    @media (min-width: ${Breakpoint.xl}) {
+      font-size: 9px;
+    }
+    @media (min-width: ${Breakpoint.xxl}) {
+      font-size: 10px;
+    }
+
   }
   html[lang^='fa'] {
     direction: rtl;
