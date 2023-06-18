@@ -13,7 +13,7 @@ export const Header:React.FC = () => {
   const isRtl = useIsRtl();
   
   return (
-    <Wrapper>
+    <Wrapper isRtl={isRtl}>
       <ChangeLocal/>
       <MainHeader>
         <PrimaryTitle isRtl={isRtl}> {t("primaryTitle")}</PrimaryTitle>
@@ -24,12 +24,16 @@ export const Header:React.FC = () => {
   )
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.section<{isRtl: boolean}>`
     background-image: ${gradientGenerator({first:"right", second:"top", opacity:.8})}, url(${bg.src});
     background-position: center;
     background-size: cover;
     height: 50vh;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: ${props => 
+                    props.isRtl
+                    ? `polygon(0 0, 100% 0, 100% 100%, 0 80%)` 
+                    : 'polygon(0 0, 100% 0, 100% 80%, 0 100%)'
+                };
     position: relative;
 
     
