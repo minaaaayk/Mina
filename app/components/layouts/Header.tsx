@@ -37,11 +37,11 @@ const Wrapper = styled.section<{isRtl: boolean}>`
     position: relative;
 
     
-    @media screen and (min-width: 600px) {
+    @media (min-width: ${Breakpoint.md}) {
         height: 65vh;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: ${Breakpoint.lg}) {
         height: 95vh;
     }
 `;
