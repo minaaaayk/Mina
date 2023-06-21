@@ -44,5 +44,6 @@ const Title = styled.h2`
   cursor: default;
   &:hover{
     transform: scale(1.2);
+    text-shadow: .5rem 1rem 2rem rgba(0, 0, 0, 20%);
   }
 `;
