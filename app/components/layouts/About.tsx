@@ -6,9 +6,12 @@ import { gradientGenerator } from '../../functions';
 export const About:React.FC = () => {
   return (
     <Wrapper>
-        <Title>
-          this is about
-        </Title>
+        <Title> this is about </Title>
+        <GridWrapper>
+          <DescriptionWrapper>
+
+          </DescriptionWrapper>
+        </GridWrapper>
     </Wrapper>
   )
 }
@@ -46,4 +49,12 @@ const Title = styled.h2`
     transform: scale(1.2);
     text-shadow: .5rem 1rem 2rem rgba(0, 0, 0, 20%);
   }
+`;
+
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+`;
+const DescriptionWrapper = styled.div`
 `;
