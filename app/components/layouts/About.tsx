@@ -4,6 +4,7 @@ import { Breakpoint, Color } from '../../constants';
 import { gradientGenerator } from '../../functions';
 
 export const About:React.FC = () => {
+  // TODO: add images
   return (
     <Wrapper>
         <Title> this is about </Title>
