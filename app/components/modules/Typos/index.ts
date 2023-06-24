@@ -1,1 +1,1 @@
-export * from './HeadingTitle';
+export * from './SecondaryHeading';

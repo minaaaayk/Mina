@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { gradientGenerator } from "../../../functions";
 
-export const HeadingTitle = styled.h2`
+export const SecondaryHeading = styled.h2`
   font-size: 3.5rem;
   font-family: 600;
   text-transform: uppercase;

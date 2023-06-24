@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Breakpoint } from '../../constants';
-import { HeadingTitle } from '../modules';
+import { SecondaryHeading } from '../modules';
 
 export const About:React.FC = () => {
   // TODO: add images
   return (
     <Wrapper>
-        <HeadingTitle> this is about </HeadingTitle>
+        <SecondaryHeading> this is about </SecondaryHeading>
         <GridWrapper>
           <DescriptionWrapper>
 
