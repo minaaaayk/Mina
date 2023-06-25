@@ -4,7 +4,6 @@ import { Breakpoint } from '../../constants';
 import { SecondaryHeading } from '../modules';
 
 export const About:React.FC = () => {
-  // TODO: add images
   return (
     <Wrapper>
         <SecondaryHeading> this is about </SecondaryHeading>
