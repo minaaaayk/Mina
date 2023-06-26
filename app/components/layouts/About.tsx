@@ -11,6 +11,9 @@ export const About:React.FC = () => {
           <DescriptionWrapper>
 
           </DescriptionWrapper>
+          <ImagesWrapper>
+            
+          </ImagesWrapper>
         </GridWrapper>
     </Wrapper>
   )
@@ -40,4 +43,7 @@ const GridWrapper = styled.div`
   gap: 2rem;
 `;
 const DescriptionWrapper = styled.div`
+`;
+
+const ImagesWrapper = styled.div`
 `;
