@@ -29,8 +29,8 @@ export const About:React.FC = () => {
           </DescriptionWrapper>
           <ImagesWrapper>
             <ImageSpan><Image src={About1} alt=""/></ImageSpan>
-            <ImageSpan><Image src={About2} alt=""/></ImageSpan>
             <ImageSpan><Image src={About3} alt=""/></ImageSpan>
+            <ImageSpan><Image src={About2} alt=""/></ImageSpan>
           </ImagesWrapper>
         </GridWrapper>
     </Wrapper>
@@ -77,7 +77,7 @@ const ImageSpan = styled.span`
   outline-offset: 1rem;
   &:hover{
     z-index: 10;
-    transform: scale(1.2);
+    transform: scale(1.2) translateY(-.5rem);
     outline: 1rem solid ${Color.gradientBlue2};
     & > span {
       box-shadow: 0 2.5rem 4rem rgba(0, 0,0 , .5);
