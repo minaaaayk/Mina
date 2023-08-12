@@ -2,6 +2,9 @@ import { appWithTranslation } from "next-i18next";
 import type { AppProps } from 'next/app'
 import { createGlobalStyle } from 'styled-components';
 import { Breakpoint, Color } from "../app/constants";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 const GlobalStyles = createGlobalStyle`
   * {
