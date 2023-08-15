@@ -24,7 +24,7 @@ export default Home;
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || "en", ["common", "header", "about"])),
+      ...(await serverSideTranslations(locale || "en", ["common", "header", "about", "features"])),
       // Will be passed to the page component as props
     },
   };
