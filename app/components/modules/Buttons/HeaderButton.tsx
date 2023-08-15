@@ -4,10 +4,10 @@ export const HeaderButton  = styled.button`
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 2rem;
-  padding: 1rem;
-  width: 4rem;
-  height: 4rem;
+  font-size: 3rem;
+  padding: 2rem;
+  width: 8rem;
+  height: 8rem;
   display: flex;
   align-items: center;
   position: absolute;
