@@ -1,16 +1,36 @@
-import { faMeh } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 import { BackgroundImage, GradientWrapper, ImageWrapper } from '../modules'
 import { useIsRtl } from '../../hooks/useIsRtl'
-
+import { Card } from '../modules/Wrappers/Card'
+import { useTranslation } from 'next-i18next'
+import { Breakpoint } from '../../constants'
 export const Features:React.FC = () => {
+  const { t } = useTranslation("features");
   const isRtl = useIsRtl();
   return (
     <FeatureWrapper isRtl={isRtl}>
       <Wrapper>
-        <Icon icon={faMeh}/>
+        <Card
+          title={t("cards.0.title")}
+          desc={t("cards.0.description")}
+          icon="fa-regular fa-handshake"
+        />
+        <Card
+          title={t("cards.0.title")}
+          desc={t("cards.0.description")}
+          icon='fa-regular fa-face-smile'
+        />
+        <Card
+          title={t("cards.0.title")}
+          desc={t("cards.0.description")}
+          icon='fa-regular fa-heart'
+        />
+        <Card
+          title={t("cards.0.title")}
+          desc={t("cards.0.description")}
+          icon='fa-regular fa-clock'
+        />
       </Wrapper>
       <BackgroundImage/>
     </FeatureWrapper>
@@ -18,6 +38,13 @@ export const Features:React.FC = () => {
 }
 
 const FeatureWrapper = styled(ImageWrapper)`
+  margin-top: 5rem;
+  @media (min-width: ${Breakpoint.md}) {
+    margin-top: 20rem;
+  }
+  @media (min-width: ${Breakpoint.lg}) {
+      margin-top: -30vh;
+  }
   clip-path: ${props => 
         props.isRtl
         ? `polygon(0 0, 100% 20%, 100% 100%, 0 80%)` 
@@ -26,9 +53,17 @@ const FeatureWrapper = styled(ImageWrapper)`
 `;
 
 const Wrapper = styled(GradientWrapper)`
-  padding: 20rem 0;
+
+  padding: 10rem;
+  @media (min-width: ${Breakpoint.md}) {
+    padding: 20rem 10rem;
+  }
+ @media (min-width: ${Breakpoint.lg}) {
+    padding: 20rem;
+  }
+  gap: 2rem;
   overflow-y: hidden;
-`;
-const Icon = styled(FontAwesomeIcon)`
-  font-size: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
 `;
