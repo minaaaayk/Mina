@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import { GradientIcon, Paragraph, TertiaryHeading } from '../';
-import { Breakpoint, Color } from '../../../constants';
-import { IconProp } from '../../../types';
+import { GradientIcon, Paragraph, TertiaryHeading } from '../modules';
+import { Breakpoint, Color } from '../../constants';
+import { IconProp } from '../../types';
 
 
 interface IProps {

@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useTranslation } from "next-i18next";
-import { ChangeLocal } from '../custom/ChangeLocal';
+import { ChangeLocal } from '../';
 import { useIsRtl } from '../../hooks/useIsRtl';
-import { Breakpoint } from '../../constants';
 import { 
   BackgroundImage, GradientWrapper, ImageWrapper, PrimaryHeading, SubPrimaryHeading, WhiteAnimatedButton,
 } from '../modules';

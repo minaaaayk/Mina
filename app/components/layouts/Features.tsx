@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { BackgroundImage, GradientWrapper, ImageWrapper } from '../modules'
 import { useIsRtl } from '../../hooks/useIsRtl'
-import { Card } from '../modules/Wrappers/Card'
+import { Card } from '../'
 import { useTranslation } from 'next-i18next'
 import { Breakpoint } from '../../constants'
 export const Features:React.FC = () => {

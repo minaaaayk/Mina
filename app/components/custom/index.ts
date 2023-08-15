@@ -1,1 +1,2 @@
-export * from '.';
+export * from './ChangeLocal';
+export * from './Card';
