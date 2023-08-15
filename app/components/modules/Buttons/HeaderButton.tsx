@@ -4,7 +4,7 @@ export const HeaderButton  = styled.button`
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 3rem;
+  font-size: 3.5rem;
   padding: 2rem;
   width: 8rem;
   height: 8rem;
