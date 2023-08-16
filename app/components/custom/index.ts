@@ -1,3 +1,3 @@
 export * from './ChangeLocal';
-export * from './Card';
+export * from './FeatureCard';
 export * from './Icon';

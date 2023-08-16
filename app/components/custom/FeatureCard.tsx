@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { GradientIcon, Paragraph, TertiaryHeading } from '../modules';
-import { Breakpoint, Color } from '../../constants';
+import { CardWrapper, GradientIcon, Paragraph, TertiaryHeading } from '../modules';
+import { Breakpoint } from '../../constants';
 import { IconProp } from '../../types';
 
 
@@ -12,7 +12,7 @@ interface IProps {
 };
 
 
-export const Card:React.FC<IProps> = ({
+export const FeatureCard:React.FC<IProps> = ({
     title,
     desc,
     icon,
@@ -27,8 +27,7 @@ export const Card:React.FC<IProps> = ({
   )
 }
 
-const Wrapper = styled.div`
-
+const Wrapper = styled(CardWrapper)`
     height: 150px;
     @media (min-width: ${Breakpoint.md}) {
         height: 200px;
@@ -36,19 +35,7 @@ const Wrapper = styled.div`
     @media (min-width: ${Breakpoint.lg}) {
         height: 250px;
     }
-    background-color: rgba(255, 255, 255, .8);
-    padding: 2.5rem;
-    text-align: center;
-    border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
-    transition: all .2s linear;
-    cursor: default;
-    &:hover{
-        transform: translateY(-1.5rem) scale(1.04);
-        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .3);
-    }
-`;
-
+`
 
 const P = styled(Paragraph)`
     overflow: hidden;

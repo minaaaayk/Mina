@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { BackgroundImage, GradientWrapper, ImageWrapper } from '../modules'
 import { useIsRtl } from '../../hooks/useIsRtl'
-import { Card } from '../'
+import { FeatureCard } from '../'
 import { useTranslation } from 'next-i18next'
 import { Breakpoint } from '../../constants'
 export const Features:React.FC = () => {
@@ -11,22 +11,22 @@ export const Features:React.FC = () => {
   return (
     <FeatureWrapper isRtl={isRtl}>
       <Wrapper>
-        <Card
+        <FeatureCard
           title={t("cards.0.title")}
           desc={t("cards.0.description")}
           icon="fa-regular fa-handshake"
         />
-        <Card
+        <FeatureCard
           title={t("cards.0.title")}
           desc={t("cards.0.description")}
           icon='fa-regular fa-face-smile'
         />
-        <Card
+        <FeatureCard
           title={t("cards.0.title")}
           desc={t("cards.0.description")}
           icon='fa-regular fa-heart'
         />
-        <Card
+        <FeatureCard
           title={t("cards.0.title")}
           desc={t("cards.0.description")}
           icon='fa-regular fa-clock'
