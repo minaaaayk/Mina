@@ -30,8 +30,12 @@ const Wrapper = styled.section`
 
 const Grid = styled.div`
   display: grid;
-  padding: 5rem 20rem 0;
   width: 100%;
-  gap: 10rem;
+  padding: 5rem 5rem 0;
+  gap: 2rem;
+  @media (min-width: ${Breakpoint.lg}) {
+      padding: 5rem 20rem 0;
+      gap: 10rem;
+  }
   grid-template-columns: 1fr 1fr 1fr;
 `;
