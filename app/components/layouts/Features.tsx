@@ -54,7 +54,10 @@ const FeatureWrapper = styled(ImageWrapper)`
 
 const Wrapper = styled(GradientWrapper)`
 
-  padding: 10rem;
+  padding: 2rem;
+  @media (min-width: ${Breakpoint.sm}) {
+    padding: 10rem;
+  }
   @media (min-width: ${Breakpoint.md}) {
     padding: 20rem 10rem;
   }

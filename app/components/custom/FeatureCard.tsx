@@ -18,16 +18,16 @@ export const FeatureCard:React.FC<IProps> = ({
     icon,
 }) => {
   return (
-    <Wrapper>
+    <Card>
         {icon && (<Icon className={icon}/>)}
         <TertiaryHeading>{title}</TertiaryHeading>
         <P>{desc}</P>
 
-    </Wrapper>
+    </Card>
   )
 }
 
-const Wrapper = styled(CardWrapper)`
+const Card = styled(CardWrapper)`
     height: 150px;
     @media (min-width: ${Breakpoint.md}) {
         height: 200px;
