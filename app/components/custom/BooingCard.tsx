@@ -41,7 +41,7 @@ const Transition = styled.div`
     &:hover{
       ${Card} {
         &.front {
-            transform: rotateY(180deg);
+            transform: rotateY(-180deg);
           }
           &:not(.front) {
             transform: rotateY(0deg);
