@@ -2,12 +2,23 @@ import React from 'react'
 import { CardWrapper } from '../modules'
 import styled from 'styled-components'
 import { Color } from '../../constants'
+import bg from '../../../public/bg.jpg';
+import Image from 'next/image';
+import { gradientGenerator } from '../../functions';
 
-export const BooingCard:React.FC = () => {
+export const BookingCard:React.FC = () => {
   return (
     <Transition>
         <Card className={'front'}>
-          hi
+          <Header>
+            <Image
+              src={bg}
+              alt=""
+              objectFit="cover"
+              layout='fill'
+              objectPosition="center"    
+            />
+          </Header>
         </Card>
         <Card>
           hi
@@ -40,7 +51,7 @@ const Transition = styled.div`
     position: relative;
     &:hover{
       ${Card} {
-        &.front {
+          &.front {
             transform: rotateY(-180deg);
           }
           &:not(.front) {
@@ -49,3 +60,12 @@ const Transition = styled.div`
         }
     }
 `
+const Header = styled.div`
+  z-index: 1;
+  background-image: ${gradientGenerator({first:"right", second:"top", opacity:.8})};
+
+  & > span {
+      z-index: 0;
+      height: 20rem !important;
+  }
+`;

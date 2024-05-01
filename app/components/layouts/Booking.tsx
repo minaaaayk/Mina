@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components';
 import { SecondaryHeading } from '../modules';
 import { Breakpoint } from '../../constants';
-import { BooingCard } from '../custom';
+import { BookingCard } from '../custom';
 
 export const Booking:React.FC = () => {
   return (
     <Wrapper>
       <SecondaryHeading>Booking</SecondaryHeading>
       <Grid>
-          <BooingCard/>
-          <BooingCard/>
-          <BooingCard/>
+          <BookingCard/>
+          <BookingCard/>
+          <BookingCard/>
       </Grid>
     </Wrapper>
   )
