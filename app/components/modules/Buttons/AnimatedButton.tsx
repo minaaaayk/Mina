@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Color } from "../../../constants";
 
-export const WhiteAnimatedButton = styled.a`
+interface IProps{
+    color?: string;
+};
+
+export const AnimatedButton = styled.a<IProps>`
 
   text-decoration: none;
-  background-color: white;
+  background-color: ${props => props.color || 'white'};
   color: ${Color.mainText};
   padding: 1rem 2rem;
   font-size: 1.8rem;
@@ -27,7 +31,7 @@ export const WhiteAnimatedButton = styled.a`
     display: inline-block;
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: ${props => props.color || 'white'};
     border-radius: 4rem;
     position: absolute;
     top: 0;
