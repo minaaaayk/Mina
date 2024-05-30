@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { SecondaryHeading } from '../modules';
-import { Breakpoint } from '../../constants';
+import { AnimatedButton, SecondaryHeading } from '../modules';
+import { Breakpoint, Color } from '../../constants';
 import { BookingCard } from '../custom';
 
 export const Booking:React.FC = () => {
@@ -13,6 +13,7 @@ export const Booking:React.FC = () => {
           <BookingCard/>
           <BookingCard/>
       </Grid>
+      <Btn color={Color.gradientBlue1}> Booking Now</Btn>
     </Wrapper>
   )
 }
@@ -38,4 +39,9 @@ const Grid = styled.div`
       gap: 10rem;
   }
   grid-template-columns: 1fr 1fr 1fr;
+`;
+
+const Btn = styled(AnimatedButton)`
+    margin-top: 8rem;
+    color: white;
 `;

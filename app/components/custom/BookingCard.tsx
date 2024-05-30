@@ -1,9 +1,7 @@
 import React from 'react'
-import { CardWrapper } from '../modules'
+import { BackgroundImage, CardTitle, CardWrapper, GradientWrapper, AnimatedButton } from '../modules'
 import styled from 'styled-components'
 import { Color } from '../../constants'
-import bg from '../../../public/bg.jpg';
-import Image from 'next/image';
 import { gradientGenerator } from '../../functions';
 
 export const BookingCard:React.FC = () => {
@@ -11,17 +9,26 @@ export const BookingCard:React.FC = () => {
     <Transition>
         <Card className={'front'}>
           <Header>
-            <Image
-              src={bg}
-              alt=""
-              objectFit="cover"
-              layout='fill'
-              objectPosition="center"    
-            />
+            <BackgroundImage/>
+            <GradientWrapper />
+            <CardTitle>
+                The Header Of Card 
+            </CardTitle>
           </Header>
+          <List> 
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+          </List>
         </Card>
         <Card>
-          hi
+           <BackWrapper>
+                Link
+                <AnimatedButton>
+                    Click Here
+                </AnimatedButton>
+           </BackWrapper>
         </Card>
     </Transition>
   )
@@ -46,7 +53,7 @@ const Card = styled(CardWrapper)`
 const Transition = styled.div`
     perspective: 150rem;
     -ms-perspective: 150rem;
-    height: 50rem;
+    height: 50rem; // both wrapper and card must be same size
     width: 100%;
     position: relative;
     &:hover{
@@ -60,12 +67,57 @@ const Transition = styled.div`
         }
     }
 `
-const Header = styled.div`
-  z-index: 1;
-  background-image: ${gradientGenerator({first:"right", second:"top", opacity:.8})};
-
+const Header = styled.div`  
   & > span {
       z-index: 0;
+      background-image: ${gradientGenerator({first:"right", second:"top", opacity:.8})};
       height: 20rem !important;
-  }
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    & > div {
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 20rem;
+        background-blend-mode: screen;
+        // use background-blend-mode for both image and color in background
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+     }
+`;
+
+const List = styled.ul`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    text-align: center;
+    font-size: 1.8rem;
+    list-style-type: none;
+    color: #777777;
+    
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+    
+    & > li {
+        font-weight: 200;
+        padding: .25rem 0;
+        &:not(&:last-child) {
+            border-bottom: 1px solid  #afadad;
+        }
+    }
+`;
+
+const BackWrapper = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 `;

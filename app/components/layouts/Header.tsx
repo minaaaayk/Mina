@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next";
 import { ChangeLocal } from '../';
 import { useIsRtl } from '../../hooks/useIsRtl';
 import { 
-  BackgroundImage, GradientWrapper, ImageWrapper, PrimaryHeading, SubPrimaryHeading, WhiteAnimatedButton,
+  BackgroundImage, GradientWrapper, ImageWrapper, PrimaryHeading, SubPrimaryHeading, AnimatedButton,
 } from '../modules';
 
 
@@ -20,7 +20,7 @@ export const Header:React.FC = () => {
         <MainHeader>
           <PrimaryHeading isRtl={isRtl}> {t("primaryTitle")}</PrimaryHeading>
           <SubPrimaryHeading isRtl={isRtl}>{t("subTitle")}</SubPrimaryHeading>
-          <WhiteAnimatedButton href="#">{t("mainButton")}</WhiteAnimatedButton>
+          <AnimatedButton href="#">{t("mainButton")}</AnimatedButton>
         </MainHeader>
       </GradientWrapper>
       <BackgroundImage/>
