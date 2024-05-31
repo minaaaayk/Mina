@@ -35,14 +35,17 @@ const Card = styled(CardWrapper)`
     @media (min-width: ${Breakpoint.lg}) {
         height: 250px;
     }
+    @media (min-width: ${Breakpoint.xxl}) {
+        height: 400px;
+    }
 `
 
 const P = styled(Paragraph)`
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of lines to show */
-           line-clamp: 4;
+    -webkit-line-clamp: 6; /* number of lines to show */
+           line-clamp: 6;
     -webkit-box-orient: vertical;
 `;
 

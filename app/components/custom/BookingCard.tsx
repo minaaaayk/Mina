@@ -1,8 +1,8 @@
 import React from 'react'
-import { BackgroundImage, CardTitle, CardWrapper, GradientWrapper, AnimatedButton } from '../modules'
+import { BackgroundImage, CardTitle, CardWrapper, AnimatedButton } from '../modules'
 import styled from 'styled-components'
 import { Color } from '../../constants'
-import { gradientGenerator } from '../../functions';
+import { opacityToHex } from '../../functions'
 
 export const BookingCard:React.FC = () => {
   return (
@@ -10,7 +10,7 @@ export const BookingCard:React.FC = () => {
         <Card className={'front'}>
           <Header>
             <BackgroundImage/>
-            <GradientWrapper />
+            <BackColor />
             <CardTitle>
                 The Header Of Card 
             </CardTitle>
@@ -70,19 +70,21 @@ const Transition = styled.div`
 const Header = styled.div`  
   & > span {
       z-index: 0;
-      background-image: ${gradientGenerator({first:"right", second:"top", opacity:.8})};
       height: 20rem !important;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
-    & > div {
+`;
+
+const BackColor = styled.div`
+        position: absolute;
         left: 0;
         top: 0;
         right: 0;
         height: 20rem;
-        background-blend-mode: screen;
         // use background-blend-mode for both image and color in background
+        background-blend-mode: screen;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-     }
+        background-image: linear-gradient(45deg, ${Color.gradientGreen1}${opacityToHex(.5)} 10%, ${Color.gradientBlue1}${opacityToHex(.5)} 70%);
 `;
 
 const List = styled.ul`

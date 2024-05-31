@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import { Color } from "../../../constants";
+import { Breakpoint, Color } from "../../../constants";
  import React, { ReactNode } from 'react';
 import { opacityToHex } from "../../../functions";
 
 export const CardTitleWrapper = styled.h4`  
     position: absolute;
-    font-size: 3.5rem;
+    
+    
+    font-size: 2.5rem;
+    @media (min-width: ${Breakpoint.xxl}) {
+        font-size: 3.5rem;
+    }
     font-weight: 300;
     color: white;
     text-transform: uppercase;
@@ -20,7 +25,7 @@ export const CardTitleWrapper = styled.h4`
     text-align: right;
     
     & > span {
-        background-color: ${Color.gradientBlue2}${opacityToHex(.65)};
+        background-color: ${Color.gradientBlue2}${opacityToHex(.7)};
         box-decoration-break: clone; // to repeat of continue styles in the nex line
         padding: 1rem 1.5rem;
     }

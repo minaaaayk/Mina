@@ -45,6 +45,7 @@ const FeatureWrapper = styled(ImageWrapper)`
   @media (min-width: ${Breakpoint.lg}) {
       margin-top: -30vh;
   }
+  height: 100rem !important;
   clip-path: ${props => 
         props.isRtl
         ? `polygon(0 0, 100% 20%, 100% 100%, 0 80%)` 
@@ -61,10 +62,13 @@ const Wrapper = styled(GradientWrapper)`
   @media (min-width: ${Breakpoint.md}) {
     padding: 20rem 10rem;
   }
+  gap: 2rem;
  @media (min-width: ${Breakpoint.lg}) {
     padding: 20rem;
   }
-  gap: 2rem;
+  @media (min-width: ${Breakpoint.xl}) {
+    gap: 6rem;
+  }
   overflow-y: hidden;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
