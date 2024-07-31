@@ -22,7 +22,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 20rem 0;
   margin-top: -25rem;
   @media (min-width: ${Breakpoint.lg}) {
       margin-top: -30vh;
