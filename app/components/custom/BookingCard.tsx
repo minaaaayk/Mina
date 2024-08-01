@@ -46,7 +46,7 @@ const Card = styled(CardWrapper)`
     background-color: white;
   }
   &:not(.front) {
-    background-image: linear-gradient(45deg, ${Color.gradientBlue1} 0%, ${Color.gradientPurple3} 70%);
+    background-image: linear-gradient(45deg, ${Color.mainGreen} 0%, ${Color.mainBlue} 70%);
     transform: rotateY(180deg);
   }
 `;
@@ -84,7 +84,7 @@ const BackColor = styled.div`
         // use background-blend-mode for both image and color in background
         background-blend-mode: screen;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        background-image: linear-gradient(45deg, ${Color.gradientGreen1}${opacityToHex(.5)} 10%, ${Color.gradientBlue1}${opacityToHex(.5)} 70%);
+        background-image: linear-gradient(30deg, ${Color.mainGreen}${opacityToHex(.5)} 10%, ${Color.mainGray}${opacityToHex(.5)} 70%);
 `;
 
 const List = styled.ul`

@@ -25,7 +25,7 @@ export const CardTitleWrapper = styled.h4`
     text-align: right;
     
     & > span {
-        background-color: ${Color.gradientBlue2}${opacityToHex(.7)};
+        background-color: ${Color.gradientGreen1}${opacityToHex(.7)};
         box-decoration-break: clone; // to repeat of continue styles in the nex line
         padding: 1rem 1.5rem;
     }

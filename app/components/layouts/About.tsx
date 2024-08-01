@@ -78,7 +78,7 @@ const ImageSpan = styled.span`
   &:hover{
     z-index: 10;
     transform: scale(1.2) translateY(-.5rem);
-    outline: 1rem solid ${Color.gradientBlue2};
+    outline: .5rem solid ${Color.mainBlue};
     & > span {
       box-shadow: 0 2.5rem 4rem rgba(0, 0,0 , .5);
   }

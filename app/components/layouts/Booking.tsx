@@ -13,7 +13,7 @@ export const Booking:React.FC = () => {
           <BookingCard/>
           <BookingCard/>
       </Grid>
-      <Btn color={Color.gradientBlue1}> Booking Now</Btn>
+      <Btn color={Color.mainGreen}> Booking Now</Btn>
     </Wrapper>
   )
 }

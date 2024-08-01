@@ -17,6 +17,5 @@ export const gradientGenerator = ({first, second, opacity}:IGradientGenerator<di
     const hex = opacity ? `${opacityToHex(opacity)}` : '';
     return (
         `linear-gradient(to ${first} ${second||""},
-            #d16ba5${hex}, #c777b9${hex}, #ba83ca${hex}, #aa8fd8${hex}, #9a9ae1${hex}, #8aa7ec${hex},
-            #79b3f4${hex}, #69bff8${hex}, #52cffe${hex}, #41dfff${hex}, #46eefa${hex}, #5ffbf1${hex})`);
+            #FFB3C6${hex} , #5ffbf1${hex})`);
 }
