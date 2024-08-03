@@ -20,8 +20,8 @@ export const Stories:React.FC = () => {
         <Story img={img1} />
         <Story img={img5} />
         <Story img={img3} />
-        <Story img={img4} />
         <Story img={img2} />
+        <Story img={img4} />
         <TextButton>Read All {isRtl ? `←` : `→`} </TextButton>
     </Wrapper>
   )
@@ -32,5 +32,6 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 15rem 0;
-  background-color: ${Color.gradientGreen1}${opacityToHex(.2)};
+  background-image: linear-gradient(5deg, ${Color.mainBlue}${opacityToHex(.4)} 10%, ${Color.gradientGreen1}${opacityToHex(.2)} 50%);
+
 `;
