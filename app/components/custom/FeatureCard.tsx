@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { CardWrapper, GradientIcon, Paragraph, TertiaryHeading } from '../modules';
-import { Breakpoint } from '../../constants';
+import { CardWrapper, GradientIcon, Paragraph, TertiaryHeading, AnimatedButton } from '../modules';
+import { Breakpoint, Color } from '../../constants';
 import { IconProp } from '../../types';
 
 
@@ -22,7 +22,7 @@ export const FeatureCard:React.FC<IProps> = ({
         {icon && (<Icon className={icon}/>)}
         <TertiaryHeading>{title}</TertiaryHeading>
         <P>{desc}</P>
-
+        <Btn color="transparent"> Show More </Btn>
     </Card>
   )
 }
@@ -52,4 +52,11 @@ const P = styled(Paragraph)`
 const Icon = styled(GradientIcon)`
     font-size: 4rem;
     margin-bottom: 1rem;
+`;
+
+const Btn = styled(AnimatedButton) `
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: ${Color.mainGreen};
+    border: .8px solid ${Color.mainGreen};
 `;

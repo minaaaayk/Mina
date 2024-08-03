@@ -13,6 +13,7 @@ export const Story:React.FC<IProp> = ({img}) => {
     <Wrapper>
         <Figure>
             <Image src={img} alt="" height="180px" width="180px"/>
+            <FigCation> Cation </FigCation>
         </Figure>
         <TextWrapper>
             <TertiaryHeading> Heading </TertiaryHeading>
@@ -24,6 +25,7 @@ export const Story:React.FC<IProp> = ({img}) => {
 
 const Wrapper = styled.div`
     font-size: 2rem;
+    overflow: visible;
 
     width: 100%;
     padding: 6rem 9rem;
@@ -40,19 +42,56 @@ const Wrapper = styled.div`
     transform: skewX(12deg);
 `;
 
+
+
+
+const FigCation = styled.figcaption`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, 10%);
+
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+`;
+
+
 const Figure = styled.figure`
     width: 15rem;
     height: 15rem;
-    background-color: black;
     float: left;
     // used for outside of Figure and position from the center of Figure (need float:left, and width and hight)
     shape-outside: circle(50% at 50% 50%);
     clip-path:  circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(-12deg);
+    position: relative;
+    cursor: pointer;
+    overflow: visible;
+    z-index: 10;
+    img {
+        transition: all 0.5s;
+    }
+    &:hover{
+       img {
+        transform: scale(1.4);
+        filter: blur(3px) brightness(80%);
+      }
+      ${FigCation} {
+        opacity: 1;
+        transform: translate(-50%, -50%) ;
+      }
+    }
   
 `;
 
 const TextWrapper = styled.div`
     transform: skewX(-12deg);
+
   
 `;
