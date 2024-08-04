@@ -13,12 +13,12 @@ export const BookForm:React.FC = () => {
             <Form>
                 <SecondaryHeading> Start Booking </SecondaryHeading>
                 <InputWrapper>
-                    <Label> Full name </Label>
                     <Input name="name" type="text" placeholder='Full name' required/>
+                    <Label> Full name </Label>
                 </InputWrapper>
                 <InputWrapper>
-                    <Label> Email </Label>
                     <Input name="email" type="email" placeholder='Email' required/>
+                    <Label> Email </Label>
                 </InputWrapper>
             </Form>
         </FormWrapper>
@@ -55,7 +55,49 @@ const FormWrapper = styled.div`
 const Form = styled.form`
     padding: 6rem;
 `;
-const InputWrapper = styled.div``;
-const Input = styled.input``;
-const Label = styled.label``;
+const InputWrapper = styled.div`
+    margin-bottom: 2rem;
+`;
 
+
+const Label = styled.label`
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: .7rem 2rem 0;
+    display: block;
+    transition: all .2s;
+    opacity: 1;
+`;
+
+
+const Input = styled.input`
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    font-family: inherit;
+    border-bottom: 3px solid transparent;
+    display: block;
+    transition: all .5s;
+
+    &::placeholder{
+        color: #999;
+    }
+    &:invalid{
+        border-bottom: 3px solid ${Color.mainPink};
+    }
+
+    &:focus{
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(0, 0 , 0, .1);
+        border-bottom: 3px solid ${Color.mainGreen};
+    }
+    &:placeholder-shown + ${Label}{
+        opacity: 0;
+        visibility: 0;
+        position: fixed;
+        transform: translateY(-4rem);
+        z-index: -1;
+    }
+`;
