@@ -1,17 +1,20 @@
-import React from 'react'
+"use clint"
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { BackgroundImage, SecondaryHeading } from '../modules';
+import { BackgroundImage, SecondaryHeading, AnimatedButton } from '../modules';
 import { Color } from '../../constants';
 import { opacityToHex } from '../../functions';
+import { useIsRtl } from '../../hooks/useIsRtl';
 
 export const BookForm:React.FC = () => {
-
+    const [option, setOption] = useState("1");
+  const isRtl = useIsRtl();
   return (
     <Wrapper>
         <BackgroundImage/>
         <FormWrapper> 
+            <SecondaryHeading> Start Booking </SecondaryHeading>
             <Form>
-                <SecondaryHeading> Start Booking </SecondaryHeading>
                 <InputWrapper>
                     <Input name="name" type="text" placeholder='Full name' required/>
                     <Label> Full name </Label>
@@ -20,7 +23,19 @@ export const BookForm:React.FC = () => {
                     <Input name="email" type="email" placeholder='Email' required/>
                     <Label> Email </Label>
                 </InputWrapper>
+
+                <RadioWrapper>
+                    <RadioItem onClick={() =>setOption("1")}>
+                        <Radio name="type" required checked={option === "1"}/>
+                        <RadioLabel> Option1 </RadioLabel>
+                    </RadioItem>
+                    <RadioItem  onClick={() =>setOption("2")}>
+                        <Radio name="type" required checked={option === "2"}/>
+                        <RadioLabel> Option2 </RadioLabel>
+                    </RadioItem>
+                </RadioWrapper>
             </Form>
+            <Btn color={Color.mainGreen}>Next step {isRtl ? `←` : `→`} </Btn>
         </FormWrapper>
     </Wrapper>
   )
@@ -50,15 +65,21 @@ const FormWrapper = styled.div`
     background-image: linear-gradient(105deg, ${Color.mainGray}${opacityToHex(0.9)} 50%, ${Color.mainBlue}${opacityToHex(0.25)} 50%);
     z-index: 2;
     border-radius: 10px;
+    padding: 6rem;
 `;
 
 const Form = styled.form`
-    padding: 6rem;
-`;
-const InputWrapper = styled.div`
-    margin-bottom: 2rem;
+    margin: 2.5rem 0 5rem;
 `;
 
+const Btn = styled(AnimatedButton)`
+    color: white;
+`;
+//----------------------------------------------------------------
+const InputWrapper = styled.div`
+    margin-bottom: 2rem;
+    width: 50rem;
+`;
 
 const Label = styled.label`
     font-size: 1.2rem;
@@ -72,6 +93,7 @@ const Label = styled.label`
 
 const Input = styled.input`
     font-size: 1.5rem;
+    width: 100%;
     padding: 1.5rem 2rem;
     border-radius: 2px;
     background-color: rgba(255, 255, 255, 0.3);
@@ -99,5 +121,62 @@ const Input = styled.input`
         position: fixed;
         transform: translateY(-4rem);
         z-index: -1;
+    }
+`;
+
+//---------------------------------------------------------------------------
+const RadioWrapper = styled.div`
+    width: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem 0;
+`;
+
+const RadioItem = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 4px;
+`;
+const RadioLabel = styled.label`
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    cursor: pointer; 
+    position: relative;
+    &::before{
+        margin: 0 10px;
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        border: 4px solid ${Color.mainGreen};
+        border-radius: 50%;
+        z-index: 1;
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 19px;
+        top: 9px;
+
+        width: 12px;
+        height: 12px;
+        background-color: ${Color.mainGreen};
+        border-radius: 50%;
+        opacity: 0;
+    }
+    
+`;
+const Radio = styled.input.attrs({ type: "radio" })`
+    width: 3rem;
+    height: 3rem;
+    display: none;
+    &:checked{
+        & + ${RadioLabel}::after {
+            opacity: 1;
+        }
     }
 `;
