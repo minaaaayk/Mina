@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head'
-import { Header, About, Features, Booking, Stories, Book } from '../app/components';
+import { Header, About, Features, Booking, Stories, Book, Footer } from '../app/components';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
@@ -18,6 +18,7 @@ const Home: NextPage = () => {
       <Booking/>
       <Stories/>
       <Book/>
+      <Footer/>
     </div>
   )
 }

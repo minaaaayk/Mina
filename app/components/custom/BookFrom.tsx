@@ -25,13 +25,13 @@ export const BookForm:React.FC = () => {
                 </InputWrapper>
 
                 <RadioWrapper>
-                    <RadioItem onClick={() =>setOption("1")}>
-                        <Radio name="type" required checked={option === "1"}/>
-                        <RadioLabel> Option1 </RadioLabel>
+                    <RadioItem>
+                        <Radio name="type" required checked={option === "1"} onChange={() =>setOption("1")}/>
+                        <RadioLabel onClick={() =>setOption("1")}> Option1 </RadioLabel>
                     </RadioItem>
-                    <RadioItem  onClick={() =>setOption("2")}>
-                        <Radio name="type" required checked={option === "2"}/>
-                        <RadioLabel> Option2 </RadioLabel>
+                    <RadioItem >
+                        <Radio name="type" required checked={option === "2"} onChange={() =>setOption("2")}/>
+                        <RadioLabel onClick={() =>setOption("2")}> Option2 </RadioLabel>
                     </RadioItem>
                 </RadioWrapper>
             </Form>
