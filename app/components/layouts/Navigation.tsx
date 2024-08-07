@@ -45,7 +45,7 @@ const NavButton = styled.button<{isRtl: boolean}>`
 `;
 const Icon = styled.span<{show: boolean}>`
     position: relative;
-    background-color: ${props => props.show ? 'transparent' : 'black'};
+    background-color: ${props => props.show ? 'transparent' : '#666666'};
     &, &::after, &::before{
         display: inline-block;
         content: "";
@@ -56,7 +56,7 @@ const Icon = styled.span<{show: boolean}>`
         transition: all .2s;
         position: absolute;
         left: 0;
-        background-color: black;
+        background-color: #666666;
     }
     
     &::after{ top: -.8rem; } // transform-origin: right/left;
