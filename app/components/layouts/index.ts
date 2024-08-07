@@ -1,4 +1,5 @@
 export * from './Header';
+export * from './Navigation';
 export * from './About';
 export * from './Features';
 export * from './Booking';
