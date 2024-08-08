@@ -30,4 +30,15 @@ const MagazineText = styled.p`
     column-count: 2; // count of text column like magazine
 
     hyphens: auto; // add dashed to world, related to languages (html lang="en/fa")
+
+    @support(rule)  or (rule) {
+        // style 
+    }
+    @media(min-resolution: 192dpi){
+        // for check resolution
+    }
+
+    @media screen and (hover: none) { // for mobile
+        
+    }
 `;
