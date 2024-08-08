@@ -22,3 +22,12 @@ const ModalWrapper = styled.div`
     }
 
 `;
+
+const MagazineText = styled.p`
+    display: table-cell; // on wrapper
+    column-rule: 1px solid black;
+    column-gap: 2rem;
+    column-count: 2; // count of text column like magazine
+
+    hyphens: auto; // add dashed to world, related to languages (html lang="en/fa")
+`;
