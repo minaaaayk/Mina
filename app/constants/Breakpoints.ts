@@ -20,3 +20,37 @@ export enum Breakpoint {
     xxl= '1536px',
     // => @media (min-width: 1536px) { ... }
 };
+
+
+// $breakpoint-sm: 576px;
+// $breakpoint-md: 768px;
+// $breakpoint-lg: 992px;
+// $breakpoint-xl: 1200px;
+// $breakpoint-xxl: 1600px;
+
+// $breakpoints: (
+//     'sm': (min-width: #{$breakpoint-sm}),
+//     'md': (min-width: #{$breakpoint-md}),
+//     'lg': (min-width: #{$breakpoint-lg}),
+//     'xl': (min-width: #{$breakpoint-xl}),
+//     'xxl': (min-width: #{$breakpoint-xxl}),
+// );
+
+// @mixin respond-to($name) {
+//     @if(map-has-key($breakpoints, $name)) {
+//         @media #{inspect(map-get($breakpoints, $name))} {
+//             @content;
+//         }
+//     }
+//     @else {
+//         @warn('invalid breakpoint name');
+//     }
+// }
+
+// :export {
+//     breakpointSm: #{$breakpoint-sm};
+//     breakpointMd: #{$breakpoint-md};
+//     breakpointLg: #{$breakpoint-lg};
+//     breakpointXl: #{$breakpoint-xl};
+//     breakpointXXL: #{$breakpoint-xxl};
+// }
