@@ -42,3 +42,7 @@ const MagazineText = styled.p`
         
     }
 `;
+
+const Icon = styled.i`
+    fill: currentColor; // use current text color
+`;
