@@ -31,7 +31,7 @@ const MagazineText = styled.p`
 
     hyphens: auto; // add dashed to world, related to languages (html lang="en/fa")
 
-    @support(rule)  or (rule) {
+    @support(rule)  or (rule) { // to check support a property
         // style 
     }
     @media(min-resolution: 192dpi){
@@ -45,4 +45,12 @@ const MagazineText = styled.p`
 
 const Icon = styled.i`
     fill: currentColor; // use current text color
+
+
+    // like background-clip : use for text
+    // use icon mask there background-color:
+    background-color: red;
+    mask-image: url('url');
+    mask-size: cover;
+
 `;
